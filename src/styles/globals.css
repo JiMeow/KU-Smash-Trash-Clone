@@ -4,3 +4,8 @@
 body {
     background: radial-gradient(circle, #96cfc4 0, #abc8bf 44%, #67c4d7 100%);
 }
+
+* {
+    padding: 0;
+    margin: 0;
+}
