@@ -70,7 +70,7 @@ export const Map: React.FC<MapProps> = ({ setZone }) => {
               />
               <text
                 fill="#000000"
-                fontFamily="Cursive"
+                fontFamily="Jua"
                 fontSize="24"
                 fontWeight="bold"
                 id={`svg_${idx}_text`}
