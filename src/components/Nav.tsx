@@ -11,7 +11,7 @@ const Nav = () => {
     >
       <div className="flex w-[100%] flex-row items-center justify-center transition-all duration-300 hover:text-white">
         <img src="/icon.png" alt="trash" className="p-[10px]" width={50} />
-        <div className="mx-8 w-full text-center text-sm font-bold md:text-2xl">
+        <div className="mx-8 w-auto text-center text-sm font-bold md:text-2xl">
           KU Smash Trash
         </div>
         <img src="/icon.png" alt="trash" className="p-[10px]" width={50} />
