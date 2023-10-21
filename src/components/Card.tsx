@@ -13,7 +13,11 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="flex h-[32vw] w-[24vw] flex-col items-center rounded-md border-2 border-solid border-black bg-[#489f93] md:h-[24vw] md:w-[16vw] md:rounded-xl">
-      <img src={imagePath} className="mt-[5%] h-[50%] w-[90%] rounded-2xl" />
+      <img
+        src={imagePath}
+        className="mt-[5%] h-[50%] w-[90%] rounded-2xl"
+        alt="Building Image"
+      />
       <div className="flex h-full w-full flex-col items-center justify-center gap-0 sm:gap-1 lg:gap-2">
         <div className="md:text-md text-[10px] sm:text-sm lg:text-lg">
           Status : {percent} %
@@ -22,7 +26,7 @@ const Card: React.FC<CardProps> = ({
           Location
         </div>
         <div className="md:text-md text-[10px] sm:text-sm lg:text-lg">
-          {location}
+          Building {location}
         </div>
       </div>
     </div>

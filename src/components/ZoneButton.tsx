@@ -1,3 +1,4 @@
+import useAvgStatusInZone from "@/hook/useAvgStatusInZone";
 import React from "react";
 
 type ZoneButtonProps = {
@@ -18,10 +19,13 @@ const ZoneButton: React.FC<ZoneButtonProps> = ({
   strokeWidth,
   transform,
 }) => {
+  const { data: percent, isError } = useAvgStatusInZone(zone);
+  const color = getColorFromPercent(!isError && percent ? percent : 0);
+
   return (
     <path
       d={d}
-      fill="rgb(31, 162, 53)"
+      fill={color}
       id={id}
       stroke={stroke}
       strokeWidth={strokeWidth}
@@ -31,3 +35,21 @@ const ZoneButton: React.FC<ZoneButtonProps> = ({
 };
 
 export default ZoneButton;
+
+function getColorFromPercent(percent: number) {
+  let r = 31;
+  let g = 162;
+  let b = 53;
+
+  if (percent > 50) {
+    r = 255;
+    g = 255 - (percent - 50) * 5.1;
+    b = 0;
+  } else {
+    g = 162 + percent * 0.93;
+    r = 31 + percent * 4;
+    b = 53 - percent * 0.53;
+  }
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
