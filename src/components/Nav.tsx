@@ -1,9 +1,6 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 const Nav = () => {
-  const router = useRouter();
-
   return (
     <div
       className="sticky top-0 z-10 flex h-[10%] w-full bg-[#489f93] text-black"
