@@ -5,7 +5,7 @@ const fetcherAvgStatusInZone = ( url: string ) => axios.get(url).then(( res ) =>
 
 const useAvgStatusInZone = ( zone: string ) => {
     const { data, error, isLoading } = useSWR<number, Error>("/api/getAvgStatusInZone/" + zone, fetcherAvgStatusInZone, {
-        refreshInterval: 3000,
+        refreshInterval: 60000,
     });
     
     return {
