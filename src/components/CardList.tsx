@@ -11,7 +11,7 @@ type CardListProps = {
 const CardList: React.FC<CardListProps> = ({ zone, dataInit }) => {
   const { data, isError, isLoading } = useBinInZone(zone);
   return (
-    <>
+    <div className="mb-8">
       {!isError && (
         <div className="grid grid-cols-3 place-items-center gap-10 px-[10vw] md:grid-cols-4">
           {data
@@ -47,7 +47,7 @@ const CardList: React.FC<CardListProps> = ({ zone, dataInit }) => {
           </h1>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
