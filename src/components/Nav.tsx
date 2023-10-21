@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div
       className="sticky top-0 z-10 flex h-[10%] w-full bg-[#489f93] text-black"
-      onClick={() => router.push("/")}
+      onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
     >
       <div className="flex w-[100%] flex-row items-center justify-center transition-all duration-300 hover:text-white">
         <img src="/icon.png" alt="trash" className="p-[10px]" width={50} />

@@ -35,9 +35,10 @@ type DataType = ZoneDataType & TextZoneDataType;
 
 type MapProps = {
   setZone: (zone: ZoneType) => void;
+  scrollTo?: React.RefObject<HTMLDivElement>;
 };
 
-export const Map: React.FC<MapProps> = ({ setZone }) => {
+export const Map: React.FC<MapProps> = ({ setZone, scrollTo: kuy }) => {
   return (
     <div className="flex flex-row items-start justify-center">
       <img
@@ -57,7 +58,11 @@ export const Map: React.FC<MapProps> = ({ setZone }) => {
               onClick={(_) => {
                 setZone(data.zone);
                 setTimeout(
-                  () => window.scroll({ top: 1300, behavior: "smooth" }),
+                  () =>
+                    window.scrollTo({
+                      top: (kuy?.current?.offsetTop ?? 0) - 80,
+                      behavior: "smooth",
+                    }),
                   100,
                 );
               }}

@@ -1,7 +1,6 @@
 import React from "react";
 
 type ZoneButtonProps = {
-  zone: string;
   d: string;
   id: string;
   fill?: string;
@@ -11,7 +10,6 @@ type ZoneButtonProps = {
 };
 
 const ZoneButton: React.FC<ZoneButtonProps> = ({
-  zone,
   d,
   id,
   stroke,
