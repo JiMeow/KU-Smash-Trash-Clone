@@ -1,5 +1,6 @@
 import React from "react";
 import ZoneButton from "./ZoneButton";
+import Image from "next/image";
 
 type ZoneType =
   | "A"
@@ -41,11 +42,13 @@ type MapProps = {
 export const Map: React.FC<MapProps> = ({ setZone, scrollTo: kuy }) => {
   return (
     <div className="flex flex-row items-start justify-center">
-      <img
+      <Image
+        height={1000}
+        width={1000}
         src="/map.png"
         className="max-h-[100vh] w-[100%] max-w-[100vw] object-contain"
         alt="kasetfair map"
-      ></img>
+      />
       <svg
         viewBox="-300 -300 1620 1800"
         className="absolute max-h-[100vh] w-[100%] max-w-[100vw] "
